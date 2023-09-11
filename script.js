@@ -5,6 +5,7 @@ async function fetchMovieData() {
             throw new Error('Failed to fetch movie data');
         }
         const data = await response.json();
+        console.log(data);
         return data;
     } catch (error) {
         console.error(error);
