@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Magnet</title>
+    <link rel="stylesheet" href="style.css">
+   
+</head>
+<body>
+    <header>
+        <h1>Movie Recommendation</h1>
+    </header>
+    <main>
+        <div class="search-container">
+            <input type="text" id="movie-search" list="movie-options" placeholder="Search for a movie">
+            <datalist id="movie-options">
+                <!-- Movie options will be populated dynamically based on your data -->
+            </datalist>
+            <button id="recommend-button">Search</button>
+        </div>
+        <div id="recommendation-list">
+            <!-- Recommended movies will be displayed here -->
+        </div>
+    </main>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
