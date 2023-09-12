@@ -70,7 +70,7 @@ main {
     border:1px dotted rgb(202, 220, 220);
     border-radius: 20px;
     background-color: rgb(0, 0, 0);
-    margin:0px;
+    margin:5px;
     padding:10px 30px 30px 30px;
     filter:opacity(0.85);
     transition: transform 0.2s ease;
