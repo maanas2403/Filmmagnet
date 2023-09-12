@@ -1,0 +1,100 @@
+
+
+body {
+    font-family: Arial, sans-serif;
+    background: url("./manna_bg.jpg") !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+header {
+    z-index:1;
+    background-color: #151212;
+    color: #fff;
+    text-align: center;
+    filter:opacity(0.85);
+    padding: 10px;
+}
+
+main {
+    margin: 20px;
+}
+
+.search-container {
+   margin:auto;
+    width:50%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+}
+
+#movie-search {
+    height: 33px;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 10px;
+    padding: 15px;
+   
+}
+
+#recommend-button {
+    width:100px;
+    margin: auto;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: 16px;
+    background-color: #0b0a0a;
+    border:2px solid white !important;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+#recommend-button:hover{
+    outline:2px solid blue;
+    color: #675151;
+   background-color: rgba(254, 205, 7, 0.97);
+}
+
+#recommendation-list {
+   margin-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.movie-item{
+    color:white;
+    /* background-image: linear-gradient(to left, #774949, #402341); */
+    border:1px dotted rgb(202, 220, 220);
+    border-radius: 20px;
+    background-color: rgb(0, 0, 0);
+    margin:0px;
+    padding:10px 30px 30px 30px;
+    filter:opacity(0.85);
+    transition: transform 0.2s ease;
+    max-width: 400px;
+}
+
+.movie-item:hover {
+    /* Scale up the element slightly on hover */
+    transform:translateY(-10px);
+   box-shadow: 0 0 10px rgba(254, 205, 7, 0.97), /* Top shadow */
+    0 0 10px rgba(254, 205, 7, 0.97), /* Right shadow */
+    0 0 10px rgba(254, 205, 7, 0.97), /* Bottom shadow */
+    0 0 10px rgba(254, 205, 7, 0.97); /* Left shadow */
+  }
+
+.movie-item h3{
+    border-bottom:2px solid rgba(254, 205, 7,0.75);
+    text-align: center;
+    font-size:150%;
+    font-weight: bolder;
+}
+
+.movie-item p{
+    text-align: center;
+    font-weight: bold;
+}
+   
