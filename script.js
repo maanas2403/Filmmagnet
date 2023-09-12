@@ -1,6 +1,6 @@
 async function fetchMovieData() {
     try {
-        const response = await fetch('output1.json'); // Replace with your API endpoint
+        const response = await fetch('output3.json'); // Replace with your API endpoint
         if (!response.ok) {
             throw new Error('Failed to fetch movie data');
         }
@@ -44,7 +44,9 @@ function recommendMovies() {
     // Filter movies with all the genres of the selected movie
     const similarMovies = movies.filter(movie => {
         // Check if every genre of the selected movie is present in the current movie
-        return selectedMovie.genres.every(genre => movie.genres.includes(genre)) && selectedMovie.primaryTitle !== movie.primaryTitle;
+        return selectedMovie.nconst.some(name =>
+            movie.nconst.includes(name)
+        ) && selectedMovie.genres.some(genre => movie.genres.includes(genre)) && selectedMovie.primaryTitle !== movie.primaryTitle;
     });
 
     // Sort similar movies by average rating from highest to lowest
