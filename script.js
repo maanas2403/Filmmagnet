@@ -1,6 +1,6 @@
 async function fetchMovieData() {
     try {
-        const response = await fetch('output3.json'); // Replace with your API endpoint
+        const response = await fetch('output6.json'); // Replace with your API endpoint
         if (!response.ok) {
             throw new Error('Failed to fetch movie data');
         }
@@ -69,6 +69,7 @@ function displayRecommendations(selectedMovie, recommendedMovies) {
     const selectedMovieItem = document.createElement("div");
     selectedMovieItem.classList.add("movie-item");
     selectedMovieItem.innerHTML = `
+        <img src="${selectedMovie.posterurl}" alt="Movie Poster">
         <h3>${selectedMovie.primaryTitle}</h3>
         <p>Genres: ${selectedMovie.genres.join(", ")}</p>
         <p>Cast: ${selectedMovie.primaryName.join(", ")}</p>
@@ -92,6 +93,7 @@ function displayRecommendations(selectedMovie, recommendedMovies) {
         const movieItem = document.createElement("div");
         movieItem.classList.add("movie-item");
         movieItem.innerHTML = `
+        <img src="${movie.posterurl}" alt="Movie Poster">
             <h3>${movie.primaryTitle}</h3>
             <p>Genres: ${movie.genres.join(", ")}</p>
             <p>Cast: ${movie.primaryName.join(", ")}</p>
@@ -107,6 +109,12 @@ function displayRecommendations(selectedMovie, recommendedMovies) {
         recommendationList.appendChild(movieItem);
     });
 }
+
+
+
+
+
+
 
 // Event listener for the Recommend button
 const recommendButton = document.getElementById("recommend-button");
