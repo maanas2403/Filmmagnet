@@ -65,16 +65,20 @@ main {
 }
 
 .movie-item{
+    display: flex; /* Use flexbox for layout */
     color:white;
     /* background-image: linear-gradient(to left, #774949, #402341); */
     border:1px dotted rgb(202, 220, 220);
     border-radius: 20px;
-    background-color: rgb(0, 0, 0);
-    margin:5px;
+    background-color: rgb(0, 0, 0,0.85);
+    margin:2px;
     padding:10px 30px 30px 30px;
-    filter:opacity(0.85);
+    /*filter:opacity(0.85);*/
     transition: transform 0.2s ease;
     max-width: 400px;
+    flex-direction: column; /* Display items in a column layout */
+    align-items: center; /* Center items horizontally */
+    text-align: center; /* Center text horizontally */
 }
 
 .movie-item:hover {
@@ -87,14 +91,23 @@ main {
   }
 
 .movie-item h3{
-    border-bottom:2px solid rgba(254, 205, 7,0.75);
+    border-bottom: 2px solid rgba(254, 205, 7, 0.75);
     text-align: center;
-    font-size:150%;
+    font-size: 150%;
     font-weight: bolder;
 }
 
 .movie-item p{
     text-align: center;
     font-weight: bold;
+    margin-top: 5px; /* Add spacing between paragraphs */
+}
+.movie-item img{
+    max-width: 50%; /* Set the max width for the image */
+    opacity: 1!important;
+    height: auto;
+    margin-right: auto; /* Move the image to the left side */
+    margin-left: auto;
+    margin-bottom: 5px; /* Add spacing between image and text */
 }
    
