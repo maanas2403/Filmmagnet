@@ -12,6 +12,24 @@ async function fetchMovieData() {
         return [];
     }
 }
+function handleHover(movieItem, movie) {
+    // Add a class to the hovered movie item to bring it to the front
+    movieItem.classList.add("front");
+    
+    // Show the details
+    const hoverInfo = movieItem.querySelector(".hover-info");
+    hoverInfo.style.display = "block";
+}
+
+// Function to remove hover effect and hide details
+function handleHoverOut(movieItem) {
+    // Remove the class to bring the movie item to its original position
+    movieItem.classList.remove("front");
+    
+    // Hide the details
+    const hoverInfo = movieItem.querySelector(".hover-info");
+    hoverInfo.style.display = "none";
+}
 
 // Function to populate the movie datalist dynamically
 function populateMovieDatalist(data) {
@@ -71,10 +89,13 @@ function displayRecommendations(selectedMovie, recommendedMovies) {
     selectedMovieItem.innerHTML = `
         <img src="${selectedMovie.posterurl}" alt="Movie Poster">
         <h3>${selectedMovie.primaryTitle}</h3>
+        <div class="hover-info">
+        <h3>${selectedMovie.primaryTitle}</h3>
         <p>Genres: ${selectedMovie.genres.join(", ")}</p>
         <p>Cast: ${selectedMovie.primaryName.join(", ")}</p>
         <p>Rating: ${selectedMovie.averageRating}</p>
         <p>Number of Votes: ${selectedMovie.numVotes}</p>
+        </div>
     `;
 
     selectedMovieItem.addEventListener("click", () => {
@@ -84,6 +105,14 @@ function displayRecommendations(selectedMovie, recommendedMovies) {
 
     recommendationList.appendChild(selectedMovieItem);
 
+    selectedMovieItem.addEventListener("mouseenter", () => {
+        handleHover(movieItem, movie);
+    });
+
+    // Event listener for hover out
+    selectedMovieItem.addEventListener("mouseleave", () => {
+        handleHoverOut(movieItem);
+    });
     if (recommendedMovies.length === 0) {
         recommendationList.innerHTML += "No recommended movies found.";
         return;
@@ -94,19 +123,31 @@ function displayRecommendations(selectedMovie, recommendedMovies) {
         movieItem.classList.add("movie-item");
         movieItem.innerHTML = `
         <img src="${movie.posterurl}" alt="Movie Poster">
+        <h3>${movie.primaryTitle}</h3>
+        <div class="hover-info">
             <h3>${movie.primaryTitle}</h3>
+            
             <p>Genres: ${movie.genres.join(", ")}</p>
             <p>Cast: ${movie.primaryName.join(", ")}</p>
             <p>Rating: ${movie.averageRating}</p>
             <p>Number of Votes: ${movie.numVotes}</p>
+            </div>
         `;
 
         movieItem.addEventListener("click", () => {
             const imdbLink = `https://www.imdb.com/title/${movie.tconst}`;
             window.location.href = imdbLink; // Navigate to IMDb link in the current window
         });
-
+        movieItem.addEventListener("mouseenter", () => {
+            handleHover(movieItem, movie);
+        });
+    
+        // Event listener for hover out
+        movieItem.addEventListener("mouseleave", () => {
+            handleHoverOut(movieItem);
+        });
         recommendationList.appendChild(movieItem);
+        
     });
 }
 
@@ -125,3 +166,4 @@ fetchMovieData().then(data => {
     populateMovieDatalist(data);
     movies = data; // Store the fetched data in the movies variable for later use
 });
+
