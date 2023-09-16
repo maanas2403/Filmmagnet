@@ -74,7 +74,7 @@ main {
     margin:2px;
     padding:10px 30px 30px 30px;
     /*filter:opacity(0.85);*/
-    transition: transform 0.2s ease;
+    transition: transform 0.3s ease;
     max-width: 300px;
     flex-direction: column;  /*Display items in a column layout */
      align-items: center; /*Center items horizontally */
