@@ -100,7 +100,7 @@ function displayRecommendations(selectedMovie, recommendedMovies) {
 
     selectedMovieItem.addEventListener("click", () => {
         const imdbLink = `https://www.imdb.com/title/${selectedMovie.tconst}`;
-        window.location.href = imdbLink; // Navigate to IMDb link in the current window
+        window.open(imdbLink, '_blank'); 
     });
 
     recommendationList.appendChild(selectedMovieItem);
@@ -136,7 +136,7 @@ function displayRecommendations(selectedMovie, recommendedMovies) {
 
         movieItem.addEventListener("click", () => {
             const imdbLink = `https://www.imdb.com/title/${movie.tconst}`;
-            window.location.href = imdbLink; // Navigate to IMDb link in the current window
+            window.open(imdbLink, '_blank'); 
         });
         movieItem.addEventListener("mouseenter", () => {
             handleHover(movieItem, movie);
