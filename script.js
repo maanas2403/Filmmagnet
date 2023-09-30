@@ -13,7 +13,7 @@ async function fetchMovieData() {
     }
 }
 const headingList = document.getElementById("heading");
-headingList.innerHTML="<h2>Select a film before clicking select</h2>";
+headingList.innerHTML="<h2>Select a film before clicking search</h2>";
 function toggleSearchSectionVisibility() {
     if (searchSectionVisible) {
         // Hide the search section
@@ -1031,7 +1031,7 @@ topWestern.addEventListener("click", function (e) {
 })
 Home.addEventListener("click", function (e) {
     document.getElementById("search-section").style.display = "flex";
-    headingList.innerHTML="<h2>Select a film before clicking select</h2>";
+    headingList.innerHTML="<h2>Select a film before clicking search</h2>";
     document.getElementById("recommendation-list").style.display = "none";
 })
 fetchMovieData().then(data => {
